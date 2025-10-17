@@ -1,0 +1,17 @@
+/* Categories and Search Pages */
+.page-header {
+    text-align: center;
+    margin: 2rem 0 3rem 0;
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, var(--light-pink), var(--primary-pink));
+    color: var(--white);
+    border-radius: var(--border-radius);
+    position: relative;
+    overflow: hidden;
+}
+
+.page-header::before {
+    content: '';
+    position: absolute;
+    top: 0
+}

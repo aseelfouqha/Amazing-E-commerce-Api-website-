@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing - All Products</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/products.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Amazing</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">All Products</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="add-product.html">Add Product</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+            <form class="search-form" id="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search products...">
+                <button type="submit" class="search-btn">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="products-header">
+            <h1>All Products</h1>
+            <div class="products-count-info">
+                Showing <span id="products-count" class="products-count">0</span> products
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="filters-container">
+            <div class="filter-group">
+                <label for="sort-by">Sort By:</label>
+                <select id="sort-by">
+                    <option value="title">Title</option>
+                    <option value="price">Price</option>
+                    <option value="rating">Rating</option>
+                    <option value="brand">Brand</option>
+                    <option value="category">Category</option>
+                </select>
+                
+                <label for="order">Order:</label>
+                <select id="order">
+                    <option value="asc">Ascending</option>
+                    <option value="desc">Descending</option>
+                </select>
+
+                <a href="categories.html" class="btn btn-secondary">Browse Categories</a>
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div id="products-container" class="products-grid"></div>
+
+        <!-- Pagination -->
+        <div class="pagination-info">
+            Page <span id="current-page">1</span> of <span id="total-pages">1</span>
+        </div>
+        <div id="pagination" class="pagination"></div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Amazing E-commerce. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/JS/utils.js"></script>
+    <script src="assets/JS/products.js"></script>
+</body>
+</html>

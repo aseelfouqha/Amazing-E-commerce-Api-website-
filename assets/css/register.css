@@ -1,0 +1,196 @@
+/* Authentication Pages */
+.auth-container {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--light-pink), var(--primary-pink));
+    padding: 2rem 0;
+    position: relative;
+}
+
+.auth-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="rgba(255,255,255,0.1)"><circle cx="50" cy="50" r="2"/></svg>');
+    background-size: 50px 50px;
+}
+
+.auth-form {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 450px;
+    margin: 1rem;
+    position: relative;
+    z-index: 1;
+    border: 1px solid rgba(255,255,255,0.2);
+    backdrop-filter: blur(10px);
+}
+
+.auth-form h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    color: var(--primary-pink);
+    font-size: 2.2rem;
+    font-weight: 700;
+    position: relative;
+}
+
+.auth-form h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-pink), var(--primary-red));
+    border-radius: 2px;
+}
+
+.form-group {
+    margin-bottom: 1.8rem;
+    position: relative;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.8rem;
+    color: var(--dark-gray);
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 1rem 1.2rem;
+    border: 2px solid #e9ecef;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    transition: var(--transition);
+    background: var(--white);
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary-pink);
+    box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.2);
+    background: var(--white);
+}
+
+.form-group input::placeholder {
+    color: #adb5bd;
+}
+
+.auth-link {
+    text-align: center;
+    margin-top: 2rem;
+    color: #666;
+    font-size: 1rem;
+}
+
+.auth-link a {
+    color: var(--primary-pink);
+    text-decoration: none;
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.auth-link a:hover {
+    color: var(--dark-pink);
+    text-decoration: underline;
+}
+
+.form-actions {
+    margin-top: 2.5rem;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1.2rem;
+    background: linear-gradient(135deg, var(--primary-pink), var(--primary-red));
+    color: var(--white);
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(255,105,180,0.3);
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255,105,180,0.4);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+/* Password strength indicator */
+.password-strength {
+    margin-top: 0.5rem;
+    height: 4px;
+    background: #e9ecef;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.strength-bar {
+    height: 100%;
+    width: 0%;
+    transition: var(--transition);
+    border-radius: 2px;
+}
+
+.strength-weak { background: var(--primary-red); width: 33%; }
+.strength-medium { background: #ffa500; width: 66%; }
+.strength-strong { background: #4CAF50; width: 100%; }
+
+/* Form validation styles */
+.form-group.error input {
+    border-color: var(--primary-red);
+    box-shadow: 0 0 0 3px rgba(255,0,0,0.1);
+}
+
+.error-message {
+    color: var(--primary-red);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    display: none;
+}
+
+.form-group.error .error-message {
+    display: block;
+}
+
+/* Responsive for Auth Pages */
+@media (max-width: 480px) {
+    .auth-form {
+        padding: 2rem;
+        margin: 0.5rem;
+    }
+    
+    .auth-form h2 {
+        font-size: 1.8rem;
+    }
+    
+    .form-group input {
+        padding: 0.8rem 1rem;
+    }
+    
+    .submit-btn {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+}

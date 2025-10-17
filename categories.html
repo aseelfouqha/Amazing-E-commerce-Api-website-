@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing - Categories</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/categories.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Amazing</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">All Products</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="add-product.html">Add Product</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+            <form class="search-form" id="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search products...">
+                <button type="submit" class="search-btn">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Product Categories</h1>
+            <p>Browse products by category</p>
+        </div>
+
+        <div id="categories-container" class="categories-grid" style="margin: 3rem 0;">
+            <!-- Categories will be loaded here -->
+        </div>
+
+        <!-- Category Products Section (shown when a category is selected) -->
+        <div id="category-products-section" style="display: none;">
+            <div class="category-header">
+                <h2 id="category-title"></h2>
+                <div class="category-badge" id="category-badge"></div>
+            </div>
+            <div id="category-products" class="products-grid"></div>
+            <div id="category-pagination" class="pagination"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Amazing E-commerce. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/JS/utils.js"></script>
+    <script src="assets/JS/categories.js"></script>
+</body>
+</html>

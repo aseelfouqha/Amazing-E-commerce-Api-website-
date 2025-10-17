@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing - Product Details</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/product-details.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Amazing</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">All Products</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="add-product.html">Add Product</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+            <form class="search-form" id="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search products...">
+                <button type="submit" class="search-btn">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="back-button">
+            <a href="javascript:history.back()" class="btn btn-secondary">← Back to Products</a>
+        </div>
+
+        <div id="product-details" class="product-details">
+            <!-- Product details will be loaded here -->
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Amazing E-commerce. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/JS/utils.js"></script>
+    <script src="assets/JS/product-details.js"></script>
+</body>
+</html>

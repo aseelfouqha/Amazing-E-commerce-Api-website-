@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing - Manage Products</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/forms.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Amazing</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">All Products</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="manage-products.html">Manage Products</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+            </ul>
+            <form class="search-form" id="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search products...">
+                <button type="submit" class="search-btn">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header" style="text-align: center; margin: 2rem 0; padding: 2rem; background: linear-gradient(135deg, #ff69b4, #ff0000); color: white; border-radius: 10px;">
+            <h1>Manage Products</h1>
+            <p>Add new products and manage existing ones</p>
+        </div>
+
+        <!-- Add Product Section -->
+        <div class="form-container" style="margin-bottom: 3rem;">
+            <h2>Add New Product</h2>
+            <form id="add-product-form">
+                <div class="form-group">
+                    <label for="title">Product Title:</label>
+                    <input type="text" id="title" name="title" required placeholder="Enter product title">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea id="description" name="description" required placeholder="Enter product description"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Price ($):</label>
+                    <input type="number" id="price" name="price" step="0.01" required placeholder="Enter price">
+                </div>
+
+                <div class="form-group">
+                    <label for="discountPercentage">Discount Percentage:</label>
+                    <input type="number" id="discountPercentage" name="discountPercentage" step="0.01" min="0" max="100" placeholder="Enter discount percentage">
+                </div>
+
+                <div class="form-group">
+                    <label for="rating">Rating (1-5):</label>
+                    <input type="number" id="rating" name="rating" min="1" max="5" step="0.1" placeholder="Enter rating">
+                </div>
+
+                <div class="form-group">
+                    <label for="stock">Stock:</label>
+                    <input type="number" id="stock" name="stock" required placeholder="Enter stock quantity">
+                </div>
+
+                <div class="form-group">
+                    <label for="brand">Brand:</label>
+                    <input type="text" id="brand" name="brand" required placeholder="Enter brand name">
+                </div>
+
+                <div class="form-group">
+                    <label for="category">Category:</label>
+                    <select id="category" name="category" required>
+                        <option value="">Select a category</option>
+                        <option value="smartphones">Smartphones</option>
+                        <option value="laptops">Laptops</option>
+                        <option value="fragrances">Fragrances</option>
+                        <option value="skincare">Skincare</option>
+                        <option value="groceries">Groceries</option>
+                        <option value="home-decoration">Home Decoration</option>
+                        <option value="furniture">Furniture</option>
+                        <option value="tops">Tops</option>
+                        <option value="womens-dresses">Women's Dresses</option>
+                        <option value="womens-shoes">Women's Shoes</option>
+                        <option value="mens-shirts">Men's Shirts</option>
+                        <option value="mens-shoes">Men's Shoes</option>
+                        <option value="mens-watches">Men's Watches</option>
+                        <option value="womens-watches">Women's Watches</option>
+                        <option value="womens-bags">Women's Bags</option>
+                        <option value="womens-jewellery">Women's Jewellery</option>
+                        <option value="sunglasses">Sunglasses</option>
+                        <option value="automotive">Automotive</option>
+                        <option value="motorcycle">Motorcycle</option>
+                        <option value="lighting">Lighting</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="thumbnail">Thumbnail URL:</label>
+                    <input type="url" id="thumbnail" name="thumbnail" placeholder="https://example.com/image.jpg">
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        Add Product
+                    </button>
+                </div>
+            </form>
+
+            <!-- Request Display for Add Product -->
+            <div id="add-request-display" style="margin-top: 2rem; display: none;">
+                <h3>Add Product Request</h3>
+                <div style="background: #f5f5f5; padding: 1rem; border-radius: 5px; border-left: 4px solid #ff69b4;">
+                    <pre id="add-request-code" style="white-space: pre-wrap; word-wrap: break-word;"></pre>
+                </div>
+                <div id="add-response" style="margin-top: 1rem;"></div>
+            </div>
+        </div>
+
+        <!-- Delete Product Section -->
+        <div class="form-container">
+            <h2>Delete Product</h2>
+            <form id="delete-product-form">
+                <div class="form-group">
+                    <label for="delete-product-id">Product ID to Delete:</label>
+                    <input type="number" id="delete-product-id" name="productId" required placeholder="Enter product ID (e.g., 1)" min="1">
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-danger">
+                        Delete Product
+                    </button>
+                </div>
+            </form>
+
+            <!-- Request Display for Delete Product -->
+            <div id="delete-request-display" style="margin-top: 2rem; display: none;">
+                <h3>Delete Product Request</h3>
+                <div style="background: #f5f5f5; padding: 1rem; border-radius: 5px; border-left: 4px solid #ff0000;">
+                    <pre id="delete-request-code" style="white-space: pre-wrap; word-wrap: break-word;"></pre>
+                </div>
+                <div id="delete-response" style="margin-top: 1rem;"></div>
+            </div>
+        </div>
+
+        <!-- Recent Products Section -->
+        <div style="margin-top: 4rem;">
+            <h2>Recent Products (Last 10)</h2>
+            <div id="recent-products" class="products-grid"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Amazing E-commerce. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/JS/utils.js"></script>
+    <script src="assets/JS/add-product.js"></script>
+</body>
+</html>

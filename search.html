@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazing - Search</title>
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/search.css">
+    <link rel="stylesheet" href="assets/css/products.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Amazing</a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">All Products</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="search.html">Search</a></li>
+                <li><a href="add-product.html">Add Product</a></li>
+                <li><a href="signin.html">Sign In</a></li>
+                <li><a href="register.html">Register</a></li>
+            </ul>
+            <form class="search-form" id="search-form">
+                <input type="text" class="search-input" id="search-input" placeholder="Search products...">
+                <button type="submit" class="search-btn">Search</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="page-header">
+            <h1>Search Products</h1>
+            <p>Find exactly what you're looking for</p>
+        </div>
+
+        <!-- Search Form -->
+        <div class="search-container" style="max-width: 600px; margin: 2rem auto;">
+            <form id="search-page-form" style="display: flex; gap: 0.5rem;">
+                <input type="text" id="search-query" class="search-input" style="flex: 1;" 
+                       placeholder="Enter product name, brand, or category..." value="">
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+        </div>
+
+        <!-- Search Results -->
+        <div id="search-results">
+            <div class="search-results-info" id="search-info">
+                Enter a search term to find products
+            </div>
+            
+            <!-- Filters for search results -->
+            <div class="filters-container" id="search-filters" style="display: none;">
+                <div class="filter-group">
+                    <label for="search-sort-by">Sort By:</label>
+                    <select id="search-sort-by">
+                        <option value="title">Title</option>
+                        <option value="price">Price</option>
+                        <option value="rating">Rating</option>
+                        <option value="brand">Brand</option>
+                    </select>
+                    
+                    <label for="search-order">Order:</label>
+                    <select id="search-order">
+                        <option value="asc">Ascending</option>
+                        <option value="desc">Descending</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="search-products" class="products-grid"></div>
+            <div id="search-pagination" class="pagination"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Amazing E-commerce. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="assets/JS/utils.js"></script>
+    <script src="assets/JS/search.js"></script>
+</body>
+</html>
